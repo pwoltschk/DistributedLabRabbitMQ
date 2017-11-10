@@ -8,6 +8,11 @@ namespace MeasurementDeviceConsumer.RabbitMQ
     {
         public static byte[] Serialize(this object obj)
         {
+            if (obj == null)
+            {
+                return null;
+            }
+
             var json = JsonConvert.SerializeObject(obj);
             return Encoding.ASCII.GetBytes(json);
         }
