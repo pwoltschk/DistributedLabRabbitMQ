@@ -32,6 +32,8 @@ namespace MeasurementDeviceConsumer.RabbitMQ
                 using (var channel = _connection.CreateModel())
                 {
                     Console.WriteLine("Listening for Topic <measurement.devicemeasurement>");
+                    Console.WriteLine("-----------------------------------------");
+                    Console.WriteLine();
 
                     channel.ExchangeDeclare(ExchangeName, "topic");
                     channel.QueueDeclare(DeviceMeasurementQueueName, 
@@ -54,6 +56,7 @@ namespace MeasurementDeviceConsumer.RabbitMQ
                         var routingKey = deliveryArguments.RoutingKey;
 
                         Console.WriteLine("--- Measurement - Routing Key <{0}> : {1} : {2}", routingKey, message.DeviceNumber, message.Value);
+                        subscription.Ack(deliveryArguments);
                     }
                 }
             }
