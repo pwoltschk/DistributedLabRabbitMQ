@@ -22,7 +22,7 @@ namespace MeasurementDeviceConsumer.RabbitMQ
 
         public void Close()
         {
-            throw new NotFiniteNumberException("Not implemented");
+            _connection.Close();
         }
 
         public void ProcessMessages()
