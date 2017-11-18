@@ -3,16 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeasurementDeviceConsumer", "MeasurementDeviceConsumer\MeasurementDeviceConsumer.csproj", "{C036C9FB-1048-42E3-85F2-0B6B12CE97C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9CEE803F-F772-4E65-A77F-1C853B6467F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9CEE803F-F772-4E65-A77F-1C853B6467F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9CEE803F-F772-4E65-A77F-1C853B6467F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9CEE803F-F772-4E65-A77F-1C853B6467F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C036C9FB-1048-42E3-85F2-0B6B12CE97C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C036C9FB-1048-42E3-85F2-0B6B12CE97C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C036C9FB-1048-42E3-85F2-0B6B12CE97C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C036C9FB-1048-42E3-85F2-0B6B12CE97C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
