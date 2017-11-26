@@ -30,13 +30,16 @@ namespace DirectMeasurementDeviceConsumer.RabbitMQ
             var props = ea.BasicProperties;
             var replyProps = _channel.CreateBasicProperties();
 
+
             try
             {
                 response = MakeMeasurement(ea);
             }
             catch (Exception ex)
             {
-                Console.WriteLine(" ERROR : " + ex.Message);            }
+                Console.WriteLine(" ERROR : " + ex.Message);
+                response = "";
+            }
             finally
             {
                 if (response != null)
