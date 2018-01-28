@@ -30,8 +30,7 @@ namespace ConcentrationSubstanceConsumer.RabbitMQ
                 using (var channel = _connection.CreateModel())
                 {
                     Console.WriteLine("Listening for Topic <measurement.concentrationsubstance>");
-                    Console.WriteLine("------------------------------------------");
-                    Console.WriteLine();
+
                     
                     channel.ExchangeDeclare(ExchangeName, "topic");
                     channel.QueueDeclare(ConcentrationSubstanceQueueName, true, false, false, null);
@@ -47,7 +46,7 @@ namespace ConcentrationSubstanceConsumer.RabbitMQ
                         var message = (ConcentrationSubstance)deliveryArguments.Body.DeSerialize(typeof(ConcentrationSubstance));
                         var routingKey = deliveryArguments.RoutingKey;
 
-                        Console.WriteLine("-- Concentration Substance - Routing Key <{0}> : {1}, £{2}, {3}, {4}", routingKey, message.TankName, message.ValueToMeasure, message.MeasurementDelay, message.SubstanceNumber);
+                        Console.WriteLine("-- Concentration Substance - Routing Key <{0}> : {1}, {2}, {3}, {4}", routingKey, message.TankName, message.ValueToMeasure, message.MeasurementDelay, message.SubstanceNumber);
                         subscription.Ack(deliveryArguments);
                     }
                 }
