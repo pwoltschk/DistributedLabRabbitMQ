@@ -41,6 +41,7 @@ namespace Measurements.RabbitMQ
 
         public void Close()
         {
+            _connection.Close();
         }
 
         public void SendMeasurement(DeviceMeasurement measurement)
@@ -53,6 +54,7 @@ namespace Measurements.RabbitMQ
 
         public void SendMessage(byte[] message, string routingKey)
         {
+            _model.BasicPublish(ExchangeName, routingKey, null, message);
         }
     }  
 }
