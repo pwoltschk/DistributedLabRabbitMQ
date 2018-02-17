@@ -13,6 +13,7 @@ namespace Measurements.RabbitMQ
 
         private const string ExchangeName = "Topic_Exchange";
         private const string DeviceMeasurementQueueName = "DeviceMeasurementTopic_Queue";
+        private const string ConcentrationSubstanceQueueName = "ConcentrationSubstanceTopic_Queue";
         private const string AllQueueName = "AllTopic_Queue";
 
         public RabbitMQClient()
@@ -32,9 +33,12 @@ namespace Measurements.RabbitMQ
             _model.ExchangeDeclare(ExchangeName, "topic");
 
             _model.QueueDeclare(DeviceMeasurementQueueName, true, false, false, null);
+            _model.QueueDeclare(ConcentrationSubstanceQueueName, true, false, false, null);
             _model.QueueDeclare(AllQueueName, true, false, false, null);
 
             _model.QueueBind(DeviceMeasurementQueueName, ExchangeName, "measurement.device");
+            _model.QueueBind(ConcentrationSubstanceQueueName, ExchangeName, 
+                "measurement.concentrationsubstance");
 
             _model.QueueBind(AllQueueName, ExchangeName, "measurement.*");
         }
@@ -51,6 +55,14 @@ namespace Measurements.RabbitMQ
                 measurement.Value);
         }
 
+        public void SendConcentrationSubstance(ConcentrationSubstance concentrationSubstance)
+        {
+            SendMessage(concentrationSubstance.Serialize(), "measurement.concentrationsubstance");
+
+            Console.WriteLine(" Concentration Substance Sent {0}, {1}, {2}, {3}", 
+                concentrationSubstance.TankName, concentrationSubstance.ValueToMeasure, 
+                concentrationSubstance.MeasurementDelay, concentrationSubstance.SubstanceNumber);
+        }
 
         public void SendMessage(byte[] message, string routingKey)
         {
