@@ -9,6 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectMeasurementDeviceCons
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcentrationSubstanceConsumer", "ConcentrationSubstanceConsumer\ConcentrationSubstanceConsumer.csproj", "{D925EED5-E628-4402-B3C7-AE417CC0BB36}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projektmappenelemente", "Projektmappenelemente", "{6DD0A60C-F09D-4294-99D9-9BA6EDB02A10}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Measurements API", "MeasurementAPI\Measurements API.csproj", "{BBB16174-3104-4F40-A4C6-12BB207B8E8E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +34,10 @@ Global
 		{D925EED5-E628-4402-B3C7-AE417CC0BB36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D925EED5-E628-4402-B3C7-AE417CC0BB36}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D925EED5-E628-4402-B3C7-AE417CC0BB36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBB16174-3104-4F40-A4C6-12BB207B8E8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBB16174-3104-4F40-A4C6-12BB207B8E8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBB16174-3104-4F40-A4C6-12BB207B8E8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBB16174-3104-4F40-A4C6-12BB207B8E8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
